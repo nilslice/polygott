@@ -44,8 +44,10 @@ COPY --from=0 /out/polygott-x11-vnc /usr/bin/polygott-x11-vnc
 ENV LC_ALL=en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV VIRTUAL_ENV="/opt/virtualenvs/python3"
-ENV PATH="/usr/local/go/bin:${VIRTUAL_ENV}/bin:/usr/GNUstep/System/Tools:/usr/GNUstep/Local/Tools:${PATH}"
+ENV PATH="/opt/cargo/bin:/usr/local/cargo/bin:/usr/local/go/bin:${VIRTUAL_ENV}/bin:/usr/GNUstep/System/Tools:/usr/GNUstep/Local/Tools:${PATH}"
 ENV PYTHONPATH="${VIRTUAL_ENV}/lib/python3.8/site-packages"
+ENV CARGO_HOME=/opt/cargo
+ENV RUSTUP_HOME=/opt/rustup
 ENV USER=runner
 
 WORKDIR /home/runner
